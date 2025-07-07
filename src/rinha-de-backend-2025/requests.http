@@ -1,0 +1,81 @@
+@port = 5123
+// @port = 9999
+@token = 123
+
+
+POST http://localhost:{{port}}/payments
+Content-Type: application/json
+
+{
+    "correlationId": "{{$guid}}",
+    "amount": 29.90
+}
+
+
+
+
+// summaries
+###
+GET http://localhost:{{port}}/payments-summary
+###
+GET http://localhost:8001/admin/payments-summary
+X-Rinha-Token: {{token}}
+###
+GET http://localhost:8002/admin/payments-summary
+X-Rinha-Token: {{token}}
+
+
+
+
+
+// payment processor config
+###
+PUT http://localhost:8001/admin/configurations/delay
+X-Rinha-Token: {{token}}
+Content-Type: application/json
+
+{
+    "delay": 0
+}
+###
+PUT http://localhost:8002/admin/configurations/delay
+X-Rinha-Token: {{token}}
+Content-Type: application/json
+
+{
+    "delay": 0
+}
+
+###
+PUT http://localhost:8001/admin/configurations/failure
+X-Rinha-Token: {{token}}
+Content-Type: application/json
+
+{
+    "failure": false
+}
+
+###
+PUT http://localhost:8002/admin/configurations/failure
+X-Rinha-Token: {{token}}
+Content-Type: application/json
+
+{
+    "failure": false
+}
+
+
+
+
+
+// danger!
+
+###
+POST http://localhost:{{port}}/purge-payments
+Content-Type: application/json
+###
+POST http://localhost:8001/admin/purge-payments
+X-Rinha-Token: {{token}}
+###
+POST http://localhost:8002/admin/purge-payments
+X-Rinha-Token: {{token}}

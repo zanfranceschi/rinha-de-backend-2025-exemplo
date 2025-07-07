@@ -1,0 +1,10 @@
+{
+    "name": "Francisco Zanfranceschi",
+    "social": ["https://x.com/zanfranceschi", "https://bsky.app/profile/zanfranceschi.bsky.social"],
+    "source-code-repo": "https://github.com/zanfranceschi/rinha-de-backend-2025-exemplo",
+    "langs": ["C#"],
+    "storages": ["postgresql"],
+    "messaging": [ ],
+    "load-balancers": ["nginx"],
+    "other-technologies": [ ]
+}
