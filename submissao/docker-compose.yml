@@ -11,8 +11,8 @@ x-service-templates:
     deploy:
       resources:
         limits:
-          cpus: "0.35"
-          memory: "50MB"
+          cpus: "0.25"
+          memory: "30MB"
     environment:
       #- TRY_PAYMENT_METHOD=WithDefaultFirst
       - TRY_PAYMENT_METHOD=WithAvailabilityCheck
@@ -38,8 +38,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "0.55"
-          memory: "230MB"
+          cpus: "0.75"
+          memory: "270MB"
 
   backend-01:
     <<: *backend
