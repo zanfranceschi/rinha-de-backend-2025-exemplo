@@ -12,7 +12,7 @@ x-service-templates:
       resources:
         limits:
           cpus: "0.25"
-          memory: "30MB"
+          memory: "45MB"
     environment:
       #- TRY_PAYMENT_METHOD=WithDefaultFirst
       - TRY_PAYMENT_METHOD=WithAvailabilityCheck
@@ -39,7 +39,7 @@ services:
       resources:
         limits:
           cpus: "0.75"
-          memory: "270MB"
+          memory: "250MB"
 
   backend-01:
     <<: *backend
@@ -67,7 +67,7 @@ services:
       resources:
         limits:
           cpus: "0.25"
-          memory: "20MB"
+          memory: "10MB"
 
 networks:
   backend:
